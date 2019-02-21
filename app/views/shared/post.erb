@@ -1,0 +1,43 @@
+
+
+<article class="finstagram-post">
+  <div class="user-info">
+    <img src="<%= vee_post.user.avatar_url %>" alt="<%= vee_post.user.username %>">
+    <h2><%= vee_post.user.username %></h2>
+    <h3><%= vee_post.humanized_time_ago %></h3>
+  </div>
+      <a class="photo" href="/vee_posts/<%= vee_post.id %>">
+
+    <img src="<%= vee_post.photo_url %>" alt="vee post from <%= vee_post.user.username %>">
+  </a>
+  <div class="actions">
+    
+    <!--
+    <%= vee_post.like_count %> likes
+    -->
+    
+    <%= erb(:"shared/likes", { locals: { vee_post: vee_post }}) %>
+
+    <span class="comment-count"><%= vee_post.comment_count %> comments</span>
+  </div>
+  
+  
+<% if current_user && allow_new_comment  %>
+
+ <%= erb(:"shared/new_comment", { locals: { vee_post: vee_post }}) %>
+
+<% end %>
+
+  
+  <ul class="comments">
+    <% vee_post.comments.each do |comment| %>
+      <li>
+        <p>
+          <%= comment.user.username %>: <%= comment.text %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</article>
+
+

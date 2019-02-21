@@ -1,0 +1,32 @@
+header {
+    background-color: #244751;
+    color: #E8FDFF;
+
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+main {
+    background-color: white;
+    padding: 16px;
+    
+}
+
+.finstagram-post {
+    margin-bottom: 48px;
+}
+
+.finstagram-post .user-info img {
+      border-radius: 50%;
+}
+
+.form-group {
+        padding-left: 30px;
+    
+}
+.login-info{
+        padding-right: 30px;
+        padding-top: 10px;
+}
